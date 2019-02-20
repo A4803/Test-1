@@ -13,11 +13,13 @@ namespace COMP2084MidtermW2019.Controllers
     {
         private DbModel db = new DbModel();
 
+        [AllowAnonymous]
         // GET: Cities
         public ActionResult Index()
         {
             var cities = db.Cities.Include(c => c.Country);
-            return View();
+            return View(cities.OrderBy(c => c.Country.Name).ThenBy(c => c.Name).ToList());
+            
         }
 
         // GET: Cities/Details/5
@@ -94,6 +96,7 @@ namespace COMP2084MidtermW2019.Controllers
         }
 
         // GET: Cities/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

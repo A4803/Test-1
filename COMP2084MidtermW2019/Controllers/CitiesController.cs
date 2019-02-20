@@ -1,11 +1,14 @@
-﻿using System;
+﻿using COMP2084MidtermW2019.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DbModel = COMP2084MidtermW2019.Models.DbModel;
 
 namespace COMP2084MidtermW2019.Controllers
 {
